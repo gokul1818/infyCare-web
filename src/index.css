@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+/* =========================
+   🎨 APP THEME (SINGLE)
+   ========================= */
+@theme {
+  /* Brand */
+  --color-primary: #014063;
+  --color-primary-light: #00A4FF8F;
+
+  --color-secondary: #FF7A0F;
+  --color-secondary-light: #374151;
+
+  /* Status */
+  --color-danger: #EF4444;
+  --color-error: #EF4414;
+  --color-success: #22C55E;
+
+  /* Backgrounds */
+  --color-background: #F3F4F6;
+  --color-background-card: #FFFFFF;
+
+  /* Text */
+  --color-text: #111827;          /* default body text */
+  --color-title: #000000;         /* ✅ TITLE (BLACK) */
+  --color-subtitle: #6B7280;      /* ✅ SUBTITLE (GRAY-500) */
+
+  /* Borders */
+  --color-border: #0000006E;
+  --color-focus-border: #D1D5DB;
+
+  /* Neutrals */
+  --color-neutral-100: #F3F4F6;
+  --color-neutral-300: #D1D5DB;
+  --color-neutral-600: #4B5563;
+  --color-neutral-700: #374151;
+}
+
+
+
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
