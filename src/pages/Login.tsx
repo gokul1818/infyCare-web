@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { loginSuccess } from "../features/auth/authSlice";
 import type { AppDispatch } from "../app/store";
 
-import Button from "../components/ui/Button";
-import Card from "../components/ui/Card";
-import TextInput from "../components/ui/TextInput";
-import Checkbox from "../components/ui/Checkbox";
+import Button from "../components/common/Button";
+import Card from "../components/common/Card";
+import TextInput from "../components/common/TextInput";
+import Checkbox from "../components/common/Checkbox";
 
 import { CiUser } from "react-icons/ci";
 import { MdLockOutline } from "react-icons/md";

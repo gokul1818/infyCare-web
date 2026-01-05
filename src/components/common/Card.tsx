@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 interface CardProps {
   children: ReactNode;
@@ -7,7 +7,9 @@ interface CardProps {
 
 export default function Card({ children, className }: CardProps) {
   return (
-    <div className={`bg-background-card rounded-xl shadow p-5 ${className || ""}`}>
+    <div
+      className={`bg-background-card rounded-xl shadow p-5 ${className || ""}`}
+    >
       {children}
     </div>
   );

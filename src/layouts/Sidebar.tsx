@@ -1,9 +1,9 @@
-import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 import { useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
 import type { RootState } from "../app/store";
 import { MENU } from "./menu";
-import { useState } from "react";
-import { MdArrowRight, MdKeyboardArrowDown, MdKeyboardArrowRight, MdMenu } from "react-icons/md";
 
 export default function Sidebar() {
   const { role } = useSelector((state: RootState) => state.auth);

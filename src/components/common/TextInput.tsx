@@ -1,13 +1,9 @@
-import {
-  InputHTMLAttributes,
-  ReactNode,
-  useState,
-} from "react";
+import type { InputHTMLAttributes, ReactNode } from "react";
+import { useState } from "react";
 import clsx from "clsx";
 import { MdVisibility, MdVisibilityOff } from "react-icons/md";
 
-interface TextInputProps
-  extends InputHTMLAttributes<HTMLInputElement> {
+interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   error?: string;
   leftIcon?: ReactNode;
@@ -26,15 +22,12 @@ export default function TextInput({
   const isPassword = type === "password";
   const [showPassword, setShowPassword] = useState(false);
 
-  const inputType =
-    isPassword && showPassword ? "text" : type;
+  const inputType = isPassword && showPassword ? "text" : type;
 
   return (
     <div className="flex flex-col gap-1">
       {label && (
-        <label className="text-sm font-normal text-title mb-1">
-          {label}
-        </label>
+        <label className="text-sm font-normal text-title mb-1">{label}</label>
       )}
 
       <div className="relative">
@@ -63,11 +56,7 @@ export default function TextInput({
         {(rightIcon || isPassword) && (
           <span
             className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer text-neutral-600"
-            onClick={
-              isPassword
-                ? () => setShowPassword((p) => !p)
-                : undefined
-            }
+            onClick={isPassword ? () => setShowPassword((p) => !p) : undefined}
           >
             {isPassword ? (
               showPassword ? (
@@ -82,11 +71,7 @@ export default function TextInput({
         )}
       </div>
 
-      {error && (
-        <p className="text-xs text-error mt-1">
-          {error}
-        </p>
-      )}
+      {error && <p className="text-xs text-error mt-1">{error}</p>}
     </div>
   );
 }

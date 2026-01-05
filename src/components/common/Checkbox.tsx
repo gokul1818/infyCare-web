@@ -1,12 +1,14 @@
-import { InputHTMLAttributes, ReactNode } from "react";
-import { Controller, Control, FieldValues } from "react-hook-form";
+// Type-only imports
+import type { InputHTMLAttributes, ReactNode } from "react";
+import type { Control, FieldValues, Path } from "react-hook-form";
+
+// Runtime imports
+import { Controller } from "react-hook-form";
 import clsx from "clsx";
 import { MdCheck } from "react-icons/md";
 
-interface BaseProps extends Omit<
-  InputHTMLAttributes<HTMLInputElement>,
-  "onChange"
-> {
+interface BaseProps
+  extends Omit<InputHTMLAttributes<HTMLInputElement>, "onChange"> {
   label?: ReactNode;
   error?: string;
   checked?: boolean;
@@ -14,7 +16,7 @@ interface BaseProps extends Omit<
 }
 
 interface ControlledProps<T extends FieldValues> extends BaseProps {
-  name: string;
+  name: Path<T>;
   control: Control<T>;
 }
 
@@ -63,11 +65,7 @@ export default function Checkbox<T extends FieldValues>(
         {value && <MdCheck className="text-white text-xs" />}
       </span>
 
-      {label && (
-        <span className="text-sm text-text">
-          {label}
-        </span>
-      )}
+      {label && <span className="text-sm text-text">{label}</span>}
     </label>
   );
 
@@ -75,25 +73,17 @@ export default function Checkbox<T extends FieldValues>(
     <div className="space-y-1">
       {"control" in props && props.control && props.name ? (
         <Controller
-          name={props.name}
+          name={props?.name}
           control={props.control}
           render={({ field }) => (
-            <CheckboxField
-              value={field.value}
-              onChange={field.onChange}
-            />
+            <CheckboxField value={field.value} onChange={field.onChange} />
           )}
         />
       ) : (
-        <CheckboxField
-          value={checked}
-          onChange={onChange}
-        />
+        <CheckboxField value={checked} onChange={onChange} />
       )}
 
-      {error && (
-        <p className="text-xs text-danger">{error}</p>
-      )}
+      {error && <p className="text-xs text-danger">{error}</p>}
     </div>
   );
 }
