@@ -18,9 +18,9 @@ export const MENU = {
       label: "Residents",
       icon: MdPeople,
       children: [
-        { label: "Contact", path: "/residents/contact", icon: MdContactPhone },
-        { label: "Diary", path: "/residents/diary", icon: MdEventNote },
-        { label: "Assessment", path: "/residents/assessment", icon: MdAssessment },
+        { label: "Contact", path: "/resident-contact", icon: MdContactPhone },
+        { label: "Diary", path: "/resident-diary", icon: MdEventNote },
+        { label: "Assessment", path: "/resident-assessment", icon: MdAssessment },
         { label: "Care Plan", path: "/residents/care-plan", icon: MdHealing },
         { label: "Medical", path: "/residents/medical", icon: MdMedicalServices },
         { label: "Financial", path: "/residents/financial", icon: MdAccountBalance },
