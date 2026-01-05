@@ -119,13 +119,12 @@ export default function Login() {
                   <Checkbox
                     label="Remember me"
                     checked={values.remember}
-                    onChange={(checked) =>
-                      setFieldValue("remember", checked)
-                    }
+                    onChange={(checked) => setFieldValue("remember", checked)}
                   />
 
                   <button
                     type="button"
+                    onClick={() => navigate("/forgot-password")}
                     className="text-primary hover:underline"
                   >
                     Forgot password?

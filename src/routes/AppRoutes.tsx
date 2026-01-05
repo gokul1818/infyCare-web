@@ -1,16 +1,17 @@
 import {
   HashRouter,
-  Routes,
-  Route,
   Navigate,
+  Route,
+  Routes,
 } from "react-router-dom";
 
-import Login from "../pages/Login";
-import Dashboard from "../pages/Dashboard";
+import MainLayout from "../layouts/MainLayout";
 import Admin from "../pages/Admin";
+import Dashboard from "../pages/Dashboard";
+import ForgotPassword from "../pages/ForgotPassword";
+import Login from "../pages/Login";
 import Unauthorized from "../pages/Unauthorized";
 import ProtectedRoute from "./ProtectedRoute";
-import MainLayout from "../layouts/MainLayout";
 
 export default function AppRoutes() {
   return (
@@ -18,6 +19,7 @@ export default function AppRoutes() {
       <Routes>
         <Route path="/" element={<Navigate to="/login" replace />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/unauthorized" element={<Unauthorized />} />
 
         {/* 🔐 Protected Layout */}
